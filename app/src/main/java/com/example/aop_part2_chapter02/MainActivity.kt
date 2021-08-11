@@ -32,4 +32,31 @@ class MainActivity : AppCompatActivity() {
 
         numberPicker.minValue = 1
         numberPicker.maxValue = 45
+
+        initRunBtn()
+    }
+
+    private fun initRunBtn() {
+        runBtn.setOnClickListener {
+            val list = getRandomNumber()
+
+            Log.d("MainActivity", list.toString())
+        }
+    }
+
+    private fun getRandomNumber(): List<Int> {
+
+        val numberList = mutableListOf<Int>()
+            .apply {
+                for (i in 1..45){
+                    this.add(i)
+                }
+            }
+
+        numberList.shuffle()
+
+        val newList = numberList.subList(0, 6)
+
+        return newList
+    }
 }
