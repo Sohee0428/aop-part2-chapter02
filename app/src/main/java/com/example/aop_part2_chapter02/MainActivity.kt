@@ -57,6 +57,6 @@ class MainActivity : AppCompatActivity() {
 
         val newList = numberList.subList(0, 6)
 
-        return newList
+        return newList.sorted()
     }
 }
