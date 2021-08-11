@@ -37,18 +37,16 @@ fun test3() {
 }
 
 
-fun test4(){
-    val random = java.util.Random()
+fun test4() {
     val list = mutableListOf<Int>().apply {
-        for(i in 1..45){
+        for (i in 1..45) {
             this.add(i)
         }
     }
     list.shuffle()
 
-    println(list.subList(0,6))
+    println(list.subList(0, 6))
 }
 
 fun main() {
-    test4()
 }
