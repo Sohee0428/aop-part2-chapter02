@@ -62,6 +62,13 @@ class MainActivity : AppCompatActivity() {
 
             didRun = true
 
+            list.forEachIndexed { index, number ->
+                val textView = numberTextViewList[index]
+
+                textView.text = number.toString()
+                textView.isVisible = true
+            }
+
             Log.d("MainActivity", list.toString())
         }
     }
@@ -71,13 +78,16 @@ class MainActivity : AppCompatActivity() {
         val numberList = mutableListOf<Int>()
             .apply {
                 for (i in 1..45) {
+                    if (pickNumberSet.contains(i)) {
+                        continue
+                    }
                     this.add(i)
                 }
             }
 
         numberList.shuffle()
 
-        val newList = numberList.subList(0, 6)
+        val newList = pickNumberSet.toList() + numberList.subList(0, 6 - pickNumberSet.size)
 
         return newList.sorted()
     }
