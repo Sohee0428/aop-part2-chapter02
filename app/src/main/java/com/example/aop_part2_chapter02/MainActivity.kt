@@ -24,7 +24,12 @@ class MainActivity : AppCompatActivity() {
         findViewById(R.id.numberPicker)
     }
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        numberPicker.minValue = 1
+        numberPicker.maxValue = 45
 }
